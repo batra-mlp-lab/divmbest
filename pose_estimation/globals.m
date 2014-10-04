@@ -1,12 +1,12 @@
 % Set up global paths used throughout the code
-addpath learning;
+addpath ./third_party_code/learning;
+addpath ./third_party_code/detection;
 addpath detection;
-addpath visualization;
-addpath evaluation;
+
 if isunix()
-  addpath mex_unix;
+  addpath ./third_party_code/mex_unix;
 elseif ispc()
-  addpath mex_pc;
+  addpath ./third_party_code/mex_pc;
 end
 
 % directory for caching models, intermediate data, and results
