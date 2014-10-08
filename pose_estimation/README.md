@@ -7,6 +7,7 @@ Please follow the steps to run the demo.
 2. Run the following to compile the various mex files.
 
 > cd third_party_code
+<br/>
 > compile;
 
 3. Run DivMBest_pose_estimation.m to generate the diverse solutions for the images in the ./PARSE directory.
