@@ -3,11 +3,11 @@ DivMBest
 
 This is the source release accompanying the following various publications:
 
-    @inproceedings{divmbest,
+    @inproceedings{divmbest_ECCV2012,
         Author = {Dhruv Batra, Payman Yadollahpour, Abner Guzman-Rivera, Greg Shakhnarovich}
         Title = {Diverse M-Best Solutions in Markov Random Fields}
         Booktitle = {European Conference on Computer Vision (ECCV)}
-        year = {2002}
+        year = {2012}
     }
   
   
