@@ -16,3 +16,7 @@ This is the source release accompanying the following various publications:
             Booktitle = {CVPR},
             Year = {2014},
     }
+
+##Instructions
+
+Please move into each directory and read the respective README files for instructions on how to use the code.
