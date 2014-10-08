@@ -25,6 +25,7 @@ ne = params.ne;
 el = params.el;
 ee = params.ee;
 else
+	addpath(genpath('./utils'));
 	datadir = './voctest50data';
 	gtdir = fullfile(datadir, 'gtdir');
 	savedir = './savedir';
