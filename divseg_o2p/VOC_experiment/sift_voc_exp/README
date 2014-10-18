@@ -1,0 +1,6 @@
+The code in this folder allows for the reproduction of results in table 1 and 2 of the paper.
+
+Run o2p_sift_for_comparison() first, to compute the required features.
+
+Then run o2p_learning_sift_comparison() for the results in table 1
+ and o2p_feature_fusion() for the O2P result in table 2.

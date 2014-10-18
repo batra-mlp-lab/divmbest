@@ -1,0 +1,4 @@
+Run caltech101_experiment to get results. You should get 79,2% averaged over 5 runs.
+Change line 51 if 1 ---> if 0, to use enriched SIFT local descriptors. This should get 80,8% accuracy.
+
+The experiment takes around 30 minutes, including the time to download the data.
