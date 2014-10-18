@@ -1,0 +1,3 @@
+6th of July 2014
+
+- removed an assert() in o2p_train.m that was sometimes firing in newer versions of MATLAB because rows were being compared with columns.

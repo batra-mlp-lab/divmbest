@@ -1,0 +1,2 @@
+Improvements to MIN/MAX when dealing with singleton dimensions.
+Improved memory efficiencies in CAT and null assignment. 

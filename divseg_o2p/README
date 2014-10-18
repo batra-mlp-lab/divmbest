@@ -1,0 +1,63 @@
+O2P release v1.0, September 2012
+Implementation of paper:
+1. Semantic Segmentation with Second-Order Pooling. Joao Carreira, Rui Caseiro, Jorge Batista, Cristian Sminchisescu. ECCV 2012.
+
+This includes the following:
+A) all the techniques described in [1].
+B) SegmBrowser, a convenient image dataset browser helpful for recognition tasks employing segmentation.
+C) a customized version of LIBLINEAR (original in http://www.csie.ntu.edu.tw/~cjlin/liblinear/) 
+that has a number of practical advantages over the original.
+
+Folder caltech101_experiment/ has code reproducing the Caltech101 results in [1]. Folder VOC_experiment/ has code reproducing the VOC results in [1].
+See the README files in those folders to run the experiments. The caltech101 experiment is quite fast (30mins), while the VOC experiment takes 2 days.
+
+All code in src/ and the experiment folders is original or has been modified from the 3d party original 
+(essentially LIBLINEAR).
+
+If you use this package in your research please cite [1].
+
+The code in the experiments will automatically download the data.
+The datasets should be cited if you use them, however:
+For Caltech101, check http://www.vision.caltech.edu/Image_Datasets/Caltech101/.
+For Pascal VOC, check http://pascallin.ecs.soton.ac.uk/challenges/VOC/.
+If you use the additional ground truth annotations for VOC, as done in [1], check
+http://www.cs.berkeley.edu/~bharath2/codes/SBD/download.html
+
+If you want to use the code on other datasets, check the VOC_experiment folder 
+and try to understand how things work. You will typically have to organize 
+the new dataset as the VOC dataset (check the generate_canonical_dataset.m files in 
+both experiment folders). You can also contact Joao Carreira (joaoluis@isr.uc.pt) as a last resort. :-)
+
+
+----------------------------------------------------------------------------------------------
+
+
+The code in external_src is from 3rd parties or has been already released previously. Some of 
+them you may choose to cite, if you use them. This includes:
+
+- Gauthier Fleutot immerge.
+
+- VLFeats: www.vlfeat.org/.
+
+- Oliver Woodford sc.m, vgg_progressbar.m and montage_new.m
+
+- Adrian Ion's DefaultVal.m.
+
+- ndSparse: http://www.mathworks.com/matlabcentral/fileexchange/29832-n-dimensional-sparse-arrays/content/ndSparse.m
+
+- libsvm-3.11: http://www.csie.ntu.edu.tw/~cjlin/libsvm/, for the caltech101 dataset experiment.
+
+
+-----------------------------------------------------------------------------------------------
+
+
+Required software/hardware:
+
+Only Linux is supported, although it should not be too hard to port to other systems.
+Most code is in MATLAB but there are a few mex files.
+
+Recommended hardware for VOC experiments: 32gb of RAM, 460 gb of free disk space, and a 64 bit CPU.
+The disk space requirements can be lowered to 220 gb. 
+Regarding RAM, 16 gb will work too but it will be a bit slower (learning will 
+require more chunks). You can do with less RAM by keeping fewer PCA dimensions. 
+See voc_train_models.m and README in the VOC_experiment/ folder to understand the options.

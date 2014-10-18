@@ -1,0 +1,16 @@
+This is a customized version of LIBLINEAR 1.5, with some differences.
+
+Positive:
+- Dense format, incorporated from the code in: http://ttic.uchicago.edu/~smaji/projects/digits/
+- Instance weights (which was in some special liblinear version).
+- Can handle 4x more data than the original, in MATLAB, given the same memory budget:
+	- Single precision (allows for 2x as much data for the same amount of RAM).
+	- No duplication of the MATLAB inputs (allows for 2x as much data for the same amount of RAM).
+- Incorporated the regression code from LIBLINEAR 1.9.
+- Allows for learning with warm starting  (by providing an input alpha vector).
+
+Negative:
+- Disregarded and damaged some of the other functionalities. Only classification 
+and regression with l2 regularization and dual formulation work (these are the fastest anyway).
+
+

@@ -1,0 +1,29 @@
+Run voc_experiment to set up the dataset (read it to understand the details).
+This step takes 30 hours, including the time to download data, CPMC segments,
+uncompress CPMC segments, extract features and reduce dimensionality. This 
+will all be cached and take up ~360 GB. You can reduce this to ~115 Gb by setting 
+BUDGET_HARD_DRIVE to true in voc_experiment. 
+
+Then run voc_train_models to train models, and voc_test_models to test them. 
+Results should be around 46% on val11 and train11. Should be between 47.6 to 48.0 on the test set (the paper has 
+47.6, but the last time I tried it got 48.0, perhaps there is some precision issue, or some stochastic effect).  
+To get test set results you'll have to submit the outputs to the voc pascal server. 
+This should take close to 6h (average 20 minutes per class).
+
+Finally you can run voc_test_models. This will get you results on the validation
+ set of 2011 by default (the previous step trained on all data but that portion).
+You should get 46.2%. This results should increase to ~48% if you retrain on all_gt_segm and test on 
+the test set of 2011 (test11).
+
+At the end of the complete experiment this folder will have 460 Gb (-240 fewer with BUDGET_HARD_DRIVE true).
+
+The default is 12500 PCA dimensions (PCA_DIMS = [5000 5000 2500]). 
+You can lower this down to 3750 (PCA_DIMS = [1500 1500 1500]), then you'll 
+be able to train in a single pass (no chunking) if you have 32gb of RAM, while incurring
+ just ~1.4% loss of voc score (44.6 or so on val11). It will lead to much faster training.
+
+pca_to_original_wrapper can be used to convert the learned models to the original non-pca space.
+Afterwards you can use voc_test_models_original_space to test the models without pca. Should 
+get the exact same results.
+
+Folder sift_voc_exp/ has code to reproduce results in table 1 and 2 of the paper.
