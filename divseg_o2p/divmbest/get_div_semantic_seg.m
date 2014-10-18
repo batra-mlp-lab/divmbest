@@ -163,6 +163,11 @@ function segs = get_div_semantic_seg(img, masks, lambda, num_solutions)
 
 function img_names=prepare_data(exp_dir, img, masks, mask_type,img_set)
 
+	if(~exist(exp_dir,'dir'))
+		!wget https://filebox.ece.vt.edu/~senthil/divseg_o2p_env.tar.gz
+		!tar xfz divseg_o2p_env.tar.gz
+	end
+
 	if(isstr(img))
 		system(['cp ' img ' ' exp_dir 'JPEGImages/temp_img.jpg']);
 		img_names={'temp_img'};
