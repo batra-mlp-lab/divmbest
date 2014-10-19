@@ -28,6 +28,6 @@ closeness of two solutions, our formulation involves maximizing a linear combina
 
 Please move into each directory and read the respective README files for instructions on how to use the code.
 
-# Code Contributors
+### Code Contributors
 
 Abner Guzman-Rivera, [Vittal Premachandran](https://github.com/VittalP), [Senthil Purushwalkam](https://github.com/senthilps8), Payman Yadollahpour
