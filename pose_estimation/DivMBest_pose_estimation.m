@@ -37,7 +37,15 @@ else
 	lambda = -0.05;
 end
 
-
+% Download PARSE dataset if it does not exist
+if(~exist(exp_dir,'dir'))
+	try
+		!wget https://filebox.ece.vt.edu/~vittal/embr/parse_dataset.tar
+		!tar xfz parse_dataset.tar
+	catch
+		error('Unable to download/untar PARSE dataset. Please download/untar manually.');
+	end
+end
 
 %% DivMBest
 boxes_mmodes = testmodel_mmodes(name,model,test,suffix,nummodes,one_scale,lambda,type);
