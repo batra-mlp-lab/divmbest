@@ -1,4 +1,5 @@
-%%%%%Diverse Semantic Segmentations
+Diverse Semantic Segmentations
+=========
 
 This directory contains the source code to generate multiple diverse semantic segmentations for the 20 Classes in PASCAL VOC. This code uses the O2P source code, the readme for which is located in README_O2P.
 
