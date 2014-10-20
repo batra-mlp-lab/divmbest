@@ -38,7 +38,7 @@ else
 end
 
 % Download PARSE dataset if it does not exist
-if(~exist(exp_dir,'dir'))
+if(~exist('./PARSE/','dir'))
 	try
 		!wget https://filebox.ece.vt.edu/~vittal/embr/parse_dataset.tar
 		!tar xfz parse_dataset.tar
