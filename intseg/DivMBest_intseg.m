@@ -31,9 +31,9 @@ else
 	savedir = './savedir';
 	
 	type = 'divMbest_boundary_';
-	nummodes = 50;
+	nummodes = 5;
 	nlabels = 2;
-	lambda = 0.05;
+	lambda = 0.2;
 
 	flist = dir(fullfile(datadir,'*.mat'));
 	fname = flist(1).name(1:end-4);
