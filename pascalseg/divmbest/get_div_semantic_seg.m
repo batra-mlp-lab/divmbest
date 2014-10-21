@@ -164,8 +164,10 @@ function segs = get_div_semantic_seg(img, masks, lambda, num_solutions)
 function img_names=prepare_data(exp_dir, img, masks, mask_type,img_set)
 
 	if(~exist(exp_dir,'dir'))
-		system('wget https://filebox.ece.vt.edu/~senthil/divseg_o2p_env.tar.gz');
-		system('tar -xfz divseg_o2p_env.tar.gz');
+		url='https://filebox.ece.vt.edu/~senthil/divseg_o2p_env.tar.gz';
+		untar(url,'./');
+		%system('wget https://filebox.ece.vt.edu/~senthil/divseg_o2p_env.tar.gz');
+		%system('tar -xfz divseg_o2p_env.tar.gz');
 	end
 
 	if(isstr(img))
