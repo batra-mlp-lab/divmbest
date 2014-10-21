@@ -1,17 +1,25 @@
+%% This is a demo script that computes multiple diverse binary segmentations.
+
+%% Create a structure called 'params' that stores all the arguments, which will be passed to the DivMBest function.
+
+% Paths
 addpath(genpath('./utils'));
 datadir = './voctest50data'; params.datadir = datadir;
 gtdir = fullfile(params.datadir, 'gtdir'); params.gtdir = gtdir;
 params.savedir = './savedir';
 
+% DivMBest-related arguments
 params.type = 'divMbest_boundary_';
 params.nummodes = 5;
 params.nlabels = 2;
 params.lambda = 0.2;
 
+% Image-related arguments
 flist = dir(fullfile(params.datadir,'*.mat'));
 fname = flist(1).name(1:end-4); params.fname = fname;
 params.gt = imread(sprintf('%s/%s.png',gtdir,fname));
 
+% Model-related arguments
 % Load data and construct the energies
 load_struct = load(sprintf('%s/%s.mat',datadir,fname));
 data_term = load_struct.data_term;
@@ -37,8 +45,14 @@ ee(2,:) = wt;
 ee(3,:) = wt;
 params.ee = ee;
 
+%% =====================================
+
+%% Perform DivMBest
 output = DivMBest_intseg(params);
 
+%% =====================================
+
+%% Visualize the diverse solutions
 figure,
 subplot(2,5,3), imshow(params.gt);
 title('Ground Truth');
