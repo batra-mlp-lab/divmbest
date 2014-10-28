@@ -34,17 +34,18 @@ else
 	% load existing model for now
 	load('PARSE_model.mat');
 	suffix = num2str(K')';
-	lambda = -0.05;
+	
+        lambda = -0.05;
 end
 
 % Download PARSE dataset if it does not exist
 if(~exist('./PARSE/','dir'))
-	try
-		websave('parse_dataset.tar.bz','https://filebox.ece.vt.edu/~vittal/embr/parse_dataset.tar.bz');
-		!tar -xfj parse_dataset.tar.bz
-	catch
-		error('Unable to download/untar PARSE dataset. Please download/untar manually.');
-	end
+       try
+               websave('parse_dataset.tar.bz','https://filebox.ece.vt.edu/~vittal/embr/parse_dataset.tar.bz');
+               !tar -xfj parse_dataset.tar.bz
+       catch
+               error('Unable to download/untar PARSE dataset. Please download/untar manually.');
+       end
 end
 
 %% DivMBest

@@ -23,8 +23,8 @@ if ~exist([cachedir 'imflip/'],'dir')
   mkdir([cachedir 'imflip/']);
 end
 
-buffydir = './BUFFY/';
+% buffydir = './BUFFY/';
 parsedir = './PARSE/';
 inriadir = './INRIA/';
 
-addpath(buffydir);
+% addpath(buffydir);
