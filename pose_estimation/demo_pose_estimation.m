@@ -13,7 +13,7 @@ params.one_scale = 0;
 [pos, neg, test] = PARSE_data(params.name);
 params.test = test;
 
-% Comment following line if you want to run DivMBest on the entire database.
+% Comment following two lines if you want to run DivMBest on the entire database.
 imnum = 53;
 params.test = test(imnum);
 
