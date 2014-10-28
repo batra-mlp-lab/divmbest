@@ -2,11 +2,7 @@
 
 This directory contains the source code to generate DivMBest solutions for the human pose estimation experiments.
 
-Please follow the steps to run the demo.
-
-i. Download the PARSE dataset from the following link ( https://filebox.ece.vt.edu/~vittal/data/parse_dataset.tar.bz ) and place the PARSE directory within the current directory (./divmbest/pose_estimation/)
-
-ii. Run the following to compile the various mex files.
+Run the following to compile the various mex files.
 
 > cd third_party_code
 <br/>
@@ -14,7 +10,14 @@ ii. Run the following to compile the various mex files.
 <br/>
 > cd ..
 
-iii. Run DivMBest_pose_estimation.m to generate the diverse solutions for the images in the ./PARSE directory.
+To run the demo, execute the following script in matlab:
+
+> demo_pose_estimation;
+
+To get divsols on all images in the PARSE dataset,  execute the following script in matlab:
+
+> DivMBest_pose_estimation;
+
 
 ## Acknowledgements
 
