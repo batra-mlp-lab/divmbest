@@ -14,7 +14,18 @@ function [pos neg test] = PARSE_data(name)
 %     test(i).im: filename for i-th testing image
 % This function also prepares flipped images and slightly rotated images for training.
 
-globals;
+divmbest_globals;
+
+% Download PARSE dataset if it does not exist
+
+if(~exist([parsedir],'dir'))
+       try
+               websave('parse_dataset.tar.bz','https://filebox.ece.vt.edu/~vittal/embr/parse_dataset.tar.bz');
+               !tar -xfj parse_dataset.tar.bz
+       catch
+               error('Unable to download/untar PARSE dataset. Please download/untar manually.');
+       end
+end
   
 cls = [name '_data'];
 try

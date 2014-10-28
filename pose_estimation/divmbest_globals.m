@@ -10,7 +10,16 @@ elseif ispc()
 end
 
 % directory for caching models, intermediate data, and results
-cachedir = 'cache/';
+if(exist('./DivMBest_pose_estimation_PATH.mat', 'file'))
+    load('./DivMBest_pose_estimation_PATH.mat');
+	cachedir = [DivMBest_pose_estimation_PATH 'cache/'];
+	parsedir = [DivMBest_pose_estimation_PATH 'PARSE/'];
+	inriadir = [DivMBest_pose_estimation_PATH 'INRIA/'];
+else
+    cachedir = 'cache/';
+    parsedir = 'PARSE/';
+    inriadir = './INRIA/';
+end
 if ~exist(cachedir,'dir')
   mkdir(cachedir);
 end
@@ -24,7 +33,5 @@ if ~exist([cachedir 'imflip/'],'dir')
 end
 
 % buffydir = './BUFFY/';
-parsedir = './PARSE/';
-inriadir = './INRIA/';
 
 % addpath(buffydir);

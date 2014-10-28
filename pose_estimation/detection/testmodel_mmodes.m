@@ -2,7 +2,7 @@ function [boxes] = testmodel_mmodes(name,model,test,suffix,nummodes,one_scale,la
 % boxes = [boxes] = testmodel_mmodes(name,model,test,suffix,nummodes,one_scale,lambda)
 % Returns candidate bounding boxes after DivMBest
 
-globals;
+divmbest_globals;
 
 if ~exist('one_scale') || isempty(one_scale)
     one_scale = 0;
