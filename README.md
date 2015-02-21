@@ -30,4 +30,4 @@ Please move into each directory and read the respective README files for instruc
 
 ### Code Contributors
 
-[Abner Guzman-Rivera](http://abnerguzman.com/), [Vittal Premachandran](http://www.comp.nus.edu.sg/~vittal/), [Senthil Purushwalkam](https://github.com/senthilps8), [Payman Yadollahpour](http://ttic.uchicago.edu/~pyadolla/)
+[Abner Guzman-Rivera](http://abnerguzman.com/), [Vittal Premachandran](http://www.cs.ucla.edu/~vittalp/), [Senthil Purushwalkam](https://github.com/senthilps8), [Payman Yadollahpour](http://ttic.uchicago.edu/~pyadolla/)
